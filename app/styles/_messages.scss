@@ -1,0 +1,26 @@
+textarea, input {
+   transition: .2s ease-out;
+}
+
+textarea.invalid,
+input.invalid {
+   margin-bottom: 1.5rem;
+}
+
+.validation-error {
+	font-size: .8rem;
+	color: red;
+	transform: translateY(-1.5rem);
+	opacity: 0;
+	height: 0;
+	overflow: hidden;
+	transition: .2s ease-out;
+   display: inline-block;
+   position: absolute;
+}
+
+textarea.invalid + .validation-error,
+input.invalid + .validation-error {
+	opacity: 1;
+	height: 1rem;
+}

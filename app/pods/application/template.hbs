@@ -1,0 +1,28 @@
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1>
+         {{#link-to 'application'}} My Ember Cookbook {{/link-to}}
+      </h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      {{#link-to 'login' tagName="li" }}
+         {{#link-to 'login'}}Login{{/link-to}}
+      {{/link-to}}
+      {{#link-to 'recipes' tagName="li" }}
+         {{#link-to 'recipes'}}My Recipes{{/link-to}}
+      {{/link-to}}
+    </ul>
+  </section>
+</nav>
+<div class="row">
+   <div class="small-12">
+      {{outlet}}
+   </div>
+</div>
