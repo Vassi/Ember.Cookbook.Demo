@@ -3,14 +3,14 @@
    <div class="small-10 medium-6 large-4 columns">
       <div class="form-item">
          <label for='username'>Username</label>
-         {{input type='text' id='username' value=username class=(if validations.attrs.username.isInvalid 'invalid')}}
-         <span class='validation-error'>{{validations.attrs.username.message}}</span>
+         {{input type='text' id='username' value=username class=(if invalidUsername 'invalid')}}
+         <span class='validation-error'>{{vattrs.username.message}}</span>
       </div>
 
       <div class="form-item">
          <label for='password'>Password</label>
-         {{input type='password' id='password' value=password class=(if validations.attrs.password.isInvalid 'invalid')}}
-         <span class='validation-error'>{{validations.attrs.password.message}}</span>
+         {{input type='password' id='password' value=password class=(if invalidPassword 'invalid')}}
+         <span class='validation-error'>{{vattrs.password.message}}</span>
       </div>
 
       <button type="button" {{action 'submitLogin'}}>Login</button>

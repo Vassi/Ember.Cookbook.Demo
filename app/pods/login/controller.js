@@ -8,6 +8,9 @@ export default Ember.Controller.extend(validationMixin, {
         if (get(this, 'validations.isValid')) {
            alert("Submit!");
         }
+        else {
+           set(this, 'displayValidation', true);
+        }
      }
  }
 });
