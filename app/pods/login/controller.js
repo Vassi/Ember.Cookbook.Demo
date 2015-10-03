@@ -1,15 +1,20 @@
 import Ember from 'ember';
-import validationMixin from './loginValidations';
 
-var { get, set} = Ember;
-export default Ember.Controller.extend(validationMixin, {
-  actions: {
+var { get, set, computed, getProperties } = Ember;
+export default Ember.Controller.extend({
+   disableSubmit: computed('model.displayValidation', 'model.validations.isInvalid', function() {
+      let display = get(this, 'model.displayValidation');
+      let invalid = get(this, 'model.validations.isInvalid');
+
+      return display ? invalid : false;
+   }),
+   actions: {
      submitLogin() {
-        if (get(this, 'validations.isValid')) {
+        if (get(this, 'model.validations.isValid')) {
            alert("Submit!");
         }
         else {
-           set(this, 'displayValidation', true);
+           set(this, 'model.displayValidation', true);
         }
      }
  }
